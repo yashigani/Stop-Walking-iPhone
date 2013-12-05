@@ -54,7 +54,7 @@
             [UIView transitionWithView:_window
                               duration:.25
                                options:UIViewAnimationOptionTransitionCrossDissolve
-                            animations:^{ [wself.warningView removeFromSuperview];  }
+                            animations:^{ [wself.warningView removeFromSuperview]; }
                             completion:completion];
         }
         else {
@@ -80,7 +80,7 @@
     [UIView transitionWithView:_window
                       duration:.25
                        options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:^{ wself.warningView.alpha = 1;  }
+                    animations:^{ wself.warningView.alpha = 1; }
                     completion:nil];
 }
 
