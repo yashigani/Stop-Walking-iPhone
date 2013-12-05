@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "Stop-Walking-iPhone"
   s.version      = "0.0.1"
-  s.summary      = "Save the children from texting and walking with iPhone."
+  s.summary      = "Save the children from texting while walking with iPhone."
   s.homepage     = "https://github.com/yashigani/Stop-Walking-iPhone"
   s.license      = {
         :type => 'MIT',

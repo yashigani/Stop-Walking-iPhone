@@ -1,9 +1,10 @@
 # Stop-Walking-iPhone
+Stop-Walking-iPhone show warning on your app when texting while walking with iPhone.
 
 # Requirements
 - iOS 7 or later
 - ARC
-- Device include **M7**
+- Device include M7
 
 # Usage
 
