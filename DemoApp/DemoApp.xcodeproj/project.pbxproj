@@ -25,6 +25,8 @@
 		3F04938D184E0B87004DA414 /* SWIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F049389184E0B87004DA414 /* SWIWindow.m */; };
 		3F04938E184E0B87004DA414 /* SWIWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04938B184E0B87004DA414 /* SWIWindowController.m */; };
 		3FF183BB184FD5CF0033C9FE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF183BA184FD5CF0033C9FE /* CoreMotion.framework */; };
+		3FF1840C1856C83B0033C9FE /* SWIImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1840B1856C83B0033C9FE /* SWIImages.xcassets */; };
+		3FF1840F1856C9170033C9FE /* SWIWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1840E1856C9170033C9FE /* SWIWarningView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		3F04938A184E0B87004DA414 /* SWIWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWIWindowController.h; sourceTree = "<group>"; };
 		3F04938B184E0B87004DA414 /* SWIWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWIWindowController.m; sourceTree = "<group>"; };
 		3FF183BA184FD5CF0033C9FE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		3FF1840B1856C83B0033C9FE /* SWIImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SWIImages.xcassets; sourceTree = "<group>"; };
+		3FF1840D1856C9170033C9FE /* SWIWarningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWIWarningView.h; sourceTree = "<group>"; };
+		3FF1840E1856C9170033C9FE /* SWIWarningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWIWarningView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +174,11 @@
 		3F049385184E0B87004DA414 /* Stop-Walking-iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				3FF1840B1856C83B0033C9FE /* SWIImages.xcassets */,
 				3F049386184E0B87004DA414 /* SWIManager.h */,
 				3F049387184E0B87004DA414 /* SWIManager.m */,
+				3FF1840D1856C9170033C9FE /* SWIWarningView.h */,
+				3FF1840E1856C9170033C9FE /* SWIWarningView.m */,
 				3F049388184E0B87004DA414 /* SWIWindow.h */,
 				3F049389184E0B87004DA414 /* SWIWindow.m */,
 				3F04938A184E0B87004DA414 /* SWIWindowController.h */,
@@ -259,6 +267,7 @@
 				3F049369184E0B36004DA414 /* Images.xcassets in Resources */,
 				3F04935B184E0B36004DA414 /* InfoPlist.strings in Resources */,
 				3F049364184E0B36004DA414 /* Main.storyboard in Resources */,
+				3FF1840C1856C83B0033C9FE /* SWIImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F049367184E0B36004DA414 /* ViewController.m in Sources */,
+				3FF1840F1856C9170033C9FE /* SWIWarningView.m in Sources */,
 				3F04938D184E0B87004DA414 /* SWIWindow.m in Sources */,
 				3F04938C184E0B87004DA414 /* SWIManager.m in Sources */,
 				3F049361184E0B36004DA414 /* AppDelegate.m in Sources */,
