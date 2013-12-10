@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Stop-Walking-iPhone"
-  s.version      = "0.0.1"
+  s.version      = "0.1"
   s.summary      = "Save the children from texting while walking with iPhone."
   s.homepage     = "https://github.com/yashigani/Stop-Walking-iPhone"
   s.license      = {
@@ -17,8 +17,9 @@ Pod::Spec.new do |s|
   }
   s.author       = { "yashigani" => "tai.fukui@gmail.com" }
   s.platform     = :ios, '7.0'
-  s.source       = { :git => "https://github.com/yashigani/Stop-Walking-iPhone.git", :tag => "0.0.1" }
-  s.source_files  = 'Stop-Walking-iPhone', 'Stop-Walking-iPhone/*.{h,m}'
-  s.framework  = 'CoreMotion'
+  s.source       = { :git => "https://github.com/yashigani/Stop-Walking-iPhone.git", :tag => "0.1" }
+  s.source_files = 'Stop-Walking-iPhone', 'Stop-Walking-iPhone/*.{h,m}'
+  s.resources    = 'Stop-Walking-iPhone/SWIImages.xcassets'
+  s.framework    = 'CoreMotion'
   s.requires_arc = true
 end
