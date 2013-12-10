@@ -1,5 +1,7 @@
 # Stop-Walking-iPhone
-Stop-Walking-iPhone show warning on your app when texting while walking with iPhone.
+Stop-Walking-iPhone is a library that showing warning on app when texting while walking with iPhone.
+
+![screenshot](./screenshot.png)
 
 # Requirements
 - iOS 7 or later
@@ -7,22 +9,39 @@ Stop-Walking-iPhone show warning on your app when texting while walking with iPh
 - Device include M7
 
 # Usage
+## Start
+``` objc
+[SWIManager.sharedManager start];
+```
 
-## Start/Stop
+## Stop
+``` objc
+[SWIManager.sharedManager stop];
+```
 
-- Start
+## Customize
+### Localization
+Using `Stop texting while walking.` key to localize.
+Add value for `Stop texting while walking.` to `Localizable.strings` file on your project.
 
-    ``` objc
-    [SWIManager.sharedManager start];
-    ```
+```
+"Stop texting while walking." = "歩きスマホはやめましょう";
+```
 
-- Stop
+If want to use another key, set localized string to `text` property.
 
-    ``` objc
-    [SWIManager.sharedManager stop];
-    ```
+``` objc
+SWIManager.sharedManager.text = NSLocalizableString(@"Stop", nil);
+```
 
-## Use original warning
+### Use original images
+Set `image` property.
+
+``` objc
+SWIManager.sharedManager.image = ... // set your original image
+```
+
+### Use original warning view
 
 ``` objc
 UIView *customWarning = ...
@@ -50,7 +69,7 @@ SWIManager.sharedmanager.seconds = 5;
 
 ## CocoaPods
 ```
-pod 'Stop-Walking-iPhone'
+pod 'Stop-Walking-iPhone', :git => 'https://github.com/yashigani/Stop-Walking-iPhone'
 ```
 
 ## Manually
