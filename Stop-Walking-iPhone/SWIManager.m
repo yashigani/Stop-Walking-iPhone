@@ -25,6 +25,7 @@ NSString * const kSWIManagerWarningWillHideNotificaiton = @"kSWIManagerWarningWi
 @end
 
 @implementation SWIManager
+@synthesize warningView = _warningView;
 
 + (BOOL)isAvailable
 {
@@ -97,7 +98,9 @@ NSString * const kSWIManagerWarningWillHideNotificaiton = @"kSWIManagerWarningWi
 - (UIView *)warningView
 {
     if (!_warningView) {
-        UIView *v = [SWIWarningView new];
+        SWIWarningView *v = [SWIWarningView new];
+        v.image = self.image;
+        v.text = self.text;
         [v sizeToFit];
         self.warningView = v;
     }
