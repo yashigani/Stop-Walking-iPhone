@@ -15,6 +15,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [SWIManager.sharedManager start];
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(warningDidHide:)
+                                               name:kSWIManagerWarningDidHideNotificaiton
+                                             object:SWIManager.sharedManager];
     // Override point for customization after application launch.
     return YES;
 }
@@ -43,7 +47,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Observe Notifications
+
+- (void)warningDidHide:(NSNotification *)notification
+{
+    // refresh picture on warning
+    SWIManager.sharedManager.warningView = nil;
 }
 
 @end

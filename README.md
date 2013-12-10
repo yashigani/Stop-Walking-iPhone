@@ -57,13 +57,13 @@ SWIManager.sharedmanager.seconds = 5;
 
 ## Notifications
 
-- `kSWIManagerWarningWillShowNotificaiton`
+- `kSWIManagerWarningDidShowNotificaiton`
 
-    `SWIManager` will show warning. Stop your application if needed.
+    `SWIManager` did show warning. Stop your application if needed.
 
-- `kSWIManagerWarningWillHideNotificaiton`.
+- `kSWIManagerWarningDidHideNotificaiton`.
 
-    `SWIManager` will hide warning. Restart your application if needed.
+    `SWIManager` did hide warning. Restart your application if needed.
 
 # Install
 
