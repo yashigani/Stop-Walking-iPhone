@@ -10,6 +10,7 @@
 
 #import <CoreMotion/CoreMotion.h>
 
+#import "SWIWarningView.h"
 #import "SWIWindowController.h"
 
 NSString * const kSWIManagerWarningWillShowNotificaiton = @"kSWIManagerWarningWillShowNotificaiton";
@@ -24,6 +25,7 @@ NSString * const kSWIManagerWarningWillHideNotificaiton = @"kSWIManagerWarningWi
 @end
 
 @implementation SWIManager
+@synthesize warningView = _warningView;
 
 + (BOOL)isAvailable
 {
@@ -96,18 +98,10 @@ NSString * const kSWIManagerWarningWillHideNotificaiton = @"kSWIManagerWarningWi
 - (UIView *)warningView
 {
     if (!_warningView) {
-        UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
-        UILabel *l = ({
-            UILabel *l = [[UILabel alloc] initWithFrame:v.frame];
-            l.text = @"歩きながらiPhoneを使うと\nあなただけでなく周囲の子どもたちも\n危険にさらされます．";
-            l.numberOfLines = 0;
-            l.textColor = UIColor.whiteColor;
-            l.textAlignment = NSTextAlignmentCenter;
-            [l sizeToFit];
-            l.center = v.center;
-            l;
-        });
-        [v addSubview:l];
+        SWIWarningView *v = [SWIWarningView new];
+        v.image = self.image;
+        v.text = self.text;
+        [v sizeToFit];
         self.warningView = v;
     }
     return _warningView;

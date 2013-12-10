@@ -13,7 +13,9 @@ extern NSString * const kSWIManagerWarningWillHideNotificaiton;
 
 @interface SWIManager : NSObject
 @property (assign) NSTimeInterval seconds;
-@property (strong, nonatomic) UIView *warningView;
+@property (nonatomic) UIView *warningView;
+@property UIImage *image;
+@property (copy) NSString *text;
 + (BOOL)isAvailable;
 + (instancetype)sharedManager;
 - (void)start;
