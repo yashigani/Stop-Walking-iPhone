@@ -15,10 +15,21 @@
 
 + (NSDictionary *)attrs
 {
-    return @{
-        NSForegroundColorAttributeName: [UIColor colorWithRed:0xee green:0xee blue:0xee alpha:1.0],
-        NSFontAttributeName: [UIFont systemFontOfSize:16],
-    };
+    static NSDictionary *attrs = nil;
+    static dispatch_once_t o;
+    dispatch_once(&o, ^{
+        NSParagraphStyle *style = ({
+            NSMutableParagraphStyle *s = NSParagraphStyle.defaultParagraphStyle.mutableCopy;
+            s.alignment = NSTextAlignmentCenter;
+            s.copy;
+        });
+        attrs = @{
+            NSForegroundColorAttributeName: [UIColor colorWithRed:0xee green:0xee blue:0xee alpha:1.0],
+            NSFontAttributeName: [UIFont systemFontOfSize:16],
+            NSParagraphStyleAttributeName: style,
+        };
+    });
+    return attrs;
 }
 
 + (UIImage *)defaultImage
