@@ -13,8 +13,8 @@
 #import "SWIWarningView.h"
 #import "SWIWindowController.h"
 
-NSString * const kSWIManagerWarningWillShowNotificaiton = @"kSWIManagerWarningWillShowNotificaiton";
-NSString * const kSWIManagerWarningWillHideNotificaiton = @"kSWIManagerWarningWillHideNotificaiton";
+NSString * const kSWIManagerWarningDidShowNotificaiton = @"kSWIManagerWarningDidShowNotificaiton";
+NSString * const kSWIManagerWarningDidHideNotificaiton = @"kSWIManagerWarningDidHideNotificaiton";
 
 @interface SWIManager ()
 @property (strong) CMMotionActivityManager *manager;
@@ -57,6 +57,17 @@ NSString * const kSWIManagerWarningWillHideNotificaiton = @"kSWIManagerWarningWi
 {
     if (!_working) {
         _working = YES;
+
+        NSNotificationCenter *center = NSNotificationCenter.defaultCenter;
+        [center addObserver:self
+                   selector:@selector(windowDidBecomeKey:)
+                       name:UIWindowDidBecomeKeyNotification
+                     object:nil];
+        [center addObserver:self
+                   selector:@selector(windowDidResignKey:)
+                       name:UIWindowDidResignKeyNotification
+                     object:nil];
+
         __weak __typeof(self) wself = self;
         void (^handler)(CMMotionActivity *) = ^(CMMotionActivity *activity) {
             [wself handleActivity:activity];
@@ -150,15 +161,35 @@ NSString * const kSWIManagerWarningWillHideNotificaiton = @"kSWIManagerWarningWi
     _windowController.warningView = self.warningView;
     _windowController.manual = manual;
     [_windowController show];
-    [NSNotificationCenter.defaultCenter postNotificationName:kSWIManagerWarningWillShowNotificaiton
-                                                      object:self];
 }
 
 - (void)hideWarning
 {
     [self.windowController hide:YES];
-    [NSNotificationCenter.defaultCenter postNotificationName:kSWIManagerWarningWillHideNotificaiton
-                                                      object:self];
+}
+
+#pragma mark - Window Notifications
+
+- (void)windowDidBecomeKey:(NSNotification *)notification
+{
+    if (notification.object == _windowController.window) {
+        __weak __typeof(self) wself = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [NSNotificationCenter.defaultCenter postNotificationName:kSWIManagerWarningDidShowNotificaiton
+                                                              object:wself];
+        });
+    }
+}
+
+- (void)windowDidResignKey:(NSNotification *)notification
+{
+    if (notification.object == _windowController.window) {
+        __weak __typeof(self) wself = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [NSNotificationCenter.defaultCenter postNotificationName:kSWIManagerWarningDidHideNotificaiton
+                                                              object:wself];
+        });
+    }
 }
 
 @end

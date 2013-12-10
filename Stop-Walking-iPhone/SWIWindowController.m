@@ -47,8 +47,8 @@
             [NSNotificationCenter.defaultCenter removeObserver:self
                                                           name:UIWindowDidBecomeKeyNotification
                                                         object:wself.window];
-            wself.window = nil;
             [wself.originalWindow makeKeyAndVisible];
+            wself.window = nil;
         };
         if (animate) {
             [UIView transitionWithView:_window

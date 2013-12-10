@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const kSWIManagerWarningWillShowNotificaiton;
-extern NSString * const kSWIManagerWarningWillHideNotificaiton;
+extern NSString * const kSWIManagerWarningDidShowNotificaiton;
+extern NSString * const kSWIManagerWarningDidHideNotificaiton;
 
 @interface SWIManager : NSObject
 @property (assign) NSTimeInterval seconds;
