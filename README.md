@@ -19,8 +19,8 @@ Stop-Walking-iPhone is a library that showing warning on app when texting while 
 [SWIManager.sharedManager stop];
 ```
 
-## Customize
-### Localization
+# Customize
+## Localization
 Using `Stop texting while walking.` key to localize.
 Add value for `Stop texting while walking.` to `Localizable.strings` file on your project.
 
@@ -34,14 +34,14 @@ If want to use another key, set localized string to `text` property.
 SWIManager.sharedManager.text = NSLocalizableString(@"Stop", nil);
 ```
 
-### Use original images
+## Use original images
 Set `image` property.
 
 ``` objc
 SWIManager.sharedManager.image = ... // set your original image
 ```
 
-### Use original warning view
+## Use original warning view
 
 ``` objc
 UIView *customWarning = ...
