@@ -69,7 +69,7 @@ SWIManager.sharedmanager.seconds = 5;
 
 ## CocoaPods
 ```
-pod 'Stop-Walking-iPhone', :git => 'https://github.com/yashigani/Stop-Walking-iPhone'
+pod 'Stop-Walking-iPhone'
 ```
 
 ## Manually
