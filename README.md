@@ -1,7 +1,7 @@
 # Stop-Walking-iPhone
-Stop-Walking-iPhone is a library that showing warning on app when texting while walking with iPhone.
+![logo](./logo.png)
 
-![screenshot](./screenshot.png)
+Stop-Walking-iPhone is a library that showing warning on app when texting while walking with iPhone.
 
 # Requirements
 - iOS 7 or later
