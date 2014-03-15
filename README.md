@@ -76,7 +76,7 @@ pod 'Stop-Walking-iPhone'
 Drag and Drop `Stop-Walking-iPhone` directory to your project.
 
 # Licence
-MIT Licene
+MIT Licence
 
 Copyright (c) 2013 Taiki Fukui
 
