@@ -42,7 +42,7 @@
         @"swi-plate-lion",
         @"swi-plate-train",
     ];
-    return [UIImage imageNamed:images[arc4random_uniform(images.count)]];
+    return [UIImage imageNamed:images[arc4random_uniform((int)images.count)]];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
