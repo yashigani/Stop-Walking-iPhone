@@ -90,7 +90,7 @@ NSString * const kSWIManagerWarningDidHideNotificaiton = @"kSWIManagerWarningDid
     if (!_windowController.window) {
         if (shouldWarn && !_timer) {
             self.timer = [self timerWithInterval:_seconds
-                                            selector:@selector(showWarningFromTimer:)];
+                                        selector:@selector(showWarningFromTimer:)];
         }
         else if (!shouldWarn) {
             self.timer = nil;
